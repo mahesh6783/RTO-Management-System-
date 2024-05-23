@@ -1,0 +1,12 @@
+{% extends 'adminbase.html' %}
+
+
+{% block content %}
+<p>Welcome Admin Page</p>
+<table border="2">
+  <tr><td>Employee Id</td><td>Employee Name</td><td>Mobile No</td><td>Appoint</td></tr>
+  {% for city in objectlist %}
+      <tr><td>{{ city.adharno }}</td><td>{{ city.ename }}</td><td>{{ city.phone }}</td><td><a href="{% url 'appoint' adharno=city.adharno%}">Appoint</a> </td></tr>
+  {% endfor %}
+</table>
+ {% endblock content %}

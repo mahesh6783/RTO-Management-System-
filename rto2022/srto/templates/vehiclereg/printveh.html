@@ -1,0 +1,33 @@
+{% extends "dealerbase.html" %}
+  {% block title %}Displaying Model Data{% endblock title %}
+  {% block content %}
+     <center>
+        <h1> VEHICLE REGISTRATION DETAILS PAGE</h1>
+            <body>
+                <table border="3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>AppNo</th>
+                            <th>Vehicle Name</th>
+                            <th>RT office</th>
+                            <th>Owner</th>
+                            <th>Mobile No</th>
+                            <th>Reg. No</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    {% for rts in drec %}
+                        <tr>
+                            <td>{{ rts.id }}</td>
+                            <td>{{ rts.vname }}</td>
+                            <td>{{ rts.rcode}}</td>
+                            <td>{{rts.oname }}</td>
+                            <td>{{rts.mobile}}</td>
+                            <td>{{ rts.rcode}}-{{rts.regno}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            </body>
+     </center>
+ {% endblock content %}

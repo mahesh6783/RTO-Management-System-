@@ -1,0 +1,18 @@
+{% extends "adminbase.html" %}
+  {% block title %}Displaying Model Data{% endblock title %}
+  {% block content %}
+     <center>
+        <h1> EDIT LICENSE RATE INFORMATION PAGE</h1>
+        <body>
+            <form method="POST" class="post-form" action="/updatelic/{{id}}">
+                {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                    <tr>
+                        <td> <button type="submit" class="btn btn-success">Update</td>
+                    </tr>
+                </table>
+            </form>
+        </body>
+    </center>
+ {% endblock content %}

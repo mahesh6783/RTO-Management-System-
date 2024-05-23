@@ -1,0 +1,36 @@
+{% extends "userbase.html" %}
+  {% block title %}Displaying Model Data{% endblock title %}
+  {% block content %}
+
+<head>
+    <title>DRIVING LICENSE APPLICATION PAGE 1</title>
+</head>
+<form method="post">
+    {% csrf_token %}
+   <center>
+       <table border="1">
+            <tr><td><h1>Select License Category</h1></td><td>
+                <select name="lcode">
+                    <option selected disabled >--select--</option>
+                        {% for j in licrec %}
+                            <option>{{ j.lcode }}</option>
+                        {% endfor %}
+                </select></td></tr>
+           <tr><td colspan="2"><center><input type="submit" value="CONFIRM" name="find"></center></td></tr>
+           <tr><td><h1>License Category</h1></td><td><input type="text" name="ltcode" value="{{lcode}}"></td></tr>
+           <tr><td><h1>License Name</h1></td><td><input type="text" name="lname" value="{{lname}}"></td></tr>
+           <tr><td><h1>License Fee</h1></td><td><input type="text" name="lfee"value="{{lfee}}"></td></tr>
+           <tr><td><h1>Credit Card No</h1></td><td><input type="text" name="cardno"></td></tr>
+           <tr><td><h1>Leaners License No</h1></td><td><input type="text" name="lno" value="{{lno}}"></td></tr>
+           <tr><td><h1>Validity From</h1></td><td><input type="text" name="vfrom" value="{{vfrom}}"></td></tr>
+           <tr><td><h1>Validity To</h1></td><td><input type="text" name="vto" value="{{vto}}"></td></tr>
+           <tr><td><h1>RT Office</h1></td><td><input type="text" name="rto" value="{{rto}}"></td></tr>
+           <tr><td><h1>Name of the Applicant</h1></td><td><input type="text" name="aname" value="{{aname}}"></td></tr>
+           <tr><td><h1>Phone No</h1></td><td><input type="text"  name="ph" value="{{ph}}"></td></tr>
+           <tr><td><h1>Email ID</h1></td><td><input type="text"  name="em" value="{{em}}"></td></tr>
+           <tr><td colspan="2"><h1><input type="submit" name="save" value="SUBMIT" </td></tr>
+       </table>
+         <p><a href="/showlic"> View License Rates </a> </p>
+   </center>
+</form>
+{% endblock content %}

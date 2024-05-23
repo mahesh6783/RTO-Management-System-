@@ -1,0 +1,29 @@
+{% extends "Employeebase.html" %}
+  {% block title %}Displaying Model Data{% endblock title %}
+  {% block content %}
+
+<head>
+    <title>VEHICLE NUMBER ISSUING PAGE 1</title>
+</head>
+<form method="post">
+    {% csrf_token %}
+   <center>
+       <table border="1">
+           <tr>
+               <td><h1>Application No</h1></td><td><select name="appno">
+           <option selected disabled >--select--</option>
+                 {% for j in newrec %}
+                        <option>{{ j.id }}</option>
+                 {% endfor %}
+           </select></td>
+           <td><input type="submit" value="CONFIRM" name="find"></td></tr>
+           <tr><td>Application No </td><td><input type="text" name="ano" value="{{vn}}" </td></tr>
+           <tr><td>Approved Registration No </td><td><input type="text" name="no" value="{{printno}}" </td></tr>
+           <tr><td>Validity From </td><td><input type="text" name="vf" value="{{fromdate}}" </td></tr>
+           <tr><td>Validity To </td><td><input type="text" name="vt" value="{{todate}}" </td></tr>
+
+           {{form.as_table}}
+       </table>
+   </center>
+</form>
+{% endblock content %}

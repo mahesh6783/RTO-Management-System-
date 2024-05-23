@@ -1,0 +1,41 @@
+{% load static %}
+  <!doctype html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>
+        {% block title %}
+        {{ page_title|default:"Untitled Page" }}
+        {% endblock title %}
+     </title>
+         <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+    </head>
+   <body>
+     <div id="wrapper">
+     <header id="header">
+       <div id="logo"><img src="{% static 'animated-logo.gif' %}" alt="" /></div>
+         <div id="top_menu"><a href="/printdealer">Dealer Approval</a>|<a href="/numissue" >Vehicles Register</a>|<a href="/showquest" >Question Paper</a> | <a href="/driving">Driving License </a>|<a href="/changepass" >Change Password</a>| <a href="http://127.0.0.1:8000/" >Logout</a></div>
+       <div id="topbanner"><img src="{% static 'top_banner.jpg' %}" alt="" /></div>
+     </header>
+     <aside id="rightsidebar">
+       <nav id="nav">
+       <ul>
+        <li><a href="#">Add Your Venue</a></li>
+        <li>Menu 2</li>
+        <li>Menu 3</li>
+       </ul>
+       </nav>
+     </aside>
+     <section id="main">
+       {% block content %}
+       <p>Placeholder text in base template. Replace with page content.</p>
+       {% endblock content %}
+     </section>
+     <footer id="footer">Copyright &copy;
+       <script type="text/JavaScript">
+       document.write(new Date().getFullYear());
+       </script> RTO MANAGEMENT SYSTEM Developed by MAHESH H
+     </footer>
+     </div>
+   </body>
+ </html>

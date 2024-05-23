@@ -1,0 +1,37 @@
+{% extends "adminbase.html" %}
+  {% block title %}Displaying Model Data{% endblock title %}
+  {% block content %}
+        <center>
+            <h1> VIEW LICENSE RATES PAGE</h1>
+            <body>
+                <table border="3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>License Code</th>
+                            <th>License Name</th>
+                            <th>License Fee</th>
+                            <th>Validity</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for rts in rtos %}
+                            <tr>
+                                <td>{{ rts.lcode }}</td>
+                                <td>{{ rts.lname }}</td>
+                                <td>{{ rts.lfee}}</td>
+                                <td>{{rts.validity }}</td>
+                                <td>
+                                     <a href="/editlic/{{ rts.lcode }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+                                     <a href="/deletelic/{{ rts.lcode }}">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <center><a href="/addlic/" class="btn btn-primary">Add New Record</a></center>
+            </body>
+        </center>
+{% endblock content %}

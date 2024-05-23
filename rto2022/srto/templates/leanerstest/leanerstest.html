@@ -1,0 +1,30 @@
+{% extends "userbase.html" %}
+  {% block title %}Displaying Model Data{% endblock title %}
+  {% block content %}
+
+<head>
+    <title>ONLINE LEANERS TEST 1</title>
+</head>
+<form method="post">
+    {% csrf_token %}
+
+   <center>
+       <table border="1">
+           <tr><td>Application No</td><td><input type="text" name="apno" value="{{appno}}"></td></tr>
+           <tr><td>Name of the Applicant</td><td><input type="text" name="aname" value="{{aname}}"></td></tr>
+           <tr><td>RT Office</td><td><input type="text" name="rcode" value="{{rto}}"></td></tr>
+           <tr><td colspan="5"><center><h1>ONLINE EXAM</h1></center></td></tr>
+           <tr><td>Exam Time</td><td><input type="text" name="examtime" value=""/></td><td></td><td>Total Mark</td> <td><input type="text" name="tmark" value="20"/></td></tr>
+           <tr><td>Remaining Time</td><td><input type="text" name="remtime" value=""/></td><td></td><td>Pass Mark</td> <td><input type="text" name="passmark" value="11"/></td></tr>
+           <tr><td></td><td></td><td>      </td><td><h1>Your Score</h1></td> <td><input type="text" name="score" value="{{score}}"/></td></tr>
+           <tr><td><h1>Qno</h1></td><td colspan="4"><input type="text" name="qno" value="{{qno}}"/></td></tr>
+           <tr><td>Question</td><td colspan="4">{{qname}}</td></tr>
+           <tr><td ><input type="radio" value="1" name="opts"></td><td colspan="4">{{op1}}</td></tr>
+           <tr><td><input type="radio" value="2" name="opts"></td><td colspan="4">{{op2}}</td></tr>
+           <tr><td><input type="radio" value="3" name="opts"></td><td colspan="4">{{op3}}</td></tr>
+           <tr><td><input type="radio" value="4" name="opts"></td><td colspan="4">{{op4}}</td></tr>
+           <tr><td colspan="5"><center><input type="submit" value="SUBMIT"></center></td></tr>
+       </table>
+   </center>
+</form>
+{% endblock content %}

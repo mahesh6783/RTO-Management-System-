@@ -1,0 +1,15 @@
+{% extends "commonbase.html" %}
+
+  {% block title %}Displaying Model Data{% endblock title %}
+
+  {% block content %}
+   <center>
+    <h1>DIFFERENT TAX RATES</h1>
+    <table border="2">
+        <tr><td>TAX CODE</td><td>VEHICLE TYPE</td><td>MODE OF OPERATION</td><td>TAX PERCENTAGE</td><td>DURATION IN YEARS</td></tr>
+        {% for item in rtos %}
+            <tr><td>{{ item.taxcode }}</td><td>{{item.vhtype}}</td><td>{{item.mop}}</td><td>{{item.taxp}}</td><td>{{item.duration}}</td></tr>
+        {% endfor %}
+    </table>
+   </center>
+ {% endblock content %}

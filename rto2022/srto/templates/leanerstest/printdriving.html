@@ -1,0 +1,19 @@
+{% extends "userbase.html" %}
+
+  {% block title %}Displaying Model Data{% endblock title %}
+
+  {% block content %}
+ <center>
+    <h1> DRIVING LICENSE INFORMATION PAGE</h1>
+   <body>
+        <form method="POST" class="post-form" action="">
+            {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                </table>
+        </form>
+    </body>
+ </center>
+ {% endblock content %}
+
+

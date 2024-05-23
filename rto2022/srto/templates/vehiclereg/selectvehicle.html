@@ -1,0 +1,29 @@
+{% extends "dealerbase.html" %}
+  {% block title %}Displaying Model Data{% endblock title %}
+  {% block content %}
+
+<head>
+    <title>VEHICLE REGISTRATION PAGE 1</title>
+</head>
+<form method="post">
+    {% csrf_token %}
+   <center>
+       <table border="1">
+           <tr><td><h1>Your Vehicle Name</h1></td><td><input type="text" name="vname"></td></tr>
+           <tr><td><h1>Engine No</h1></td><td><input type="text" name="veng"></td></tr>
+           <tr><td><h1>Chaiss No</h1></td><td><input type="text" name="vchass"></td></tr>
+           <tr><td><h1>Year of Manufacturing</h1></td><td><input type="text" name="vyear"></td></tr>
+           <tr><td><h1>Month of Manufacturing</h1></td><td><input type="text" name="vmonth"></td></tr>
+           <tr><td><h1>Vehicle Price</h1></td><td><input type="text"  name="price"></td></tr>
+           <tr><td><h1>Select Tax Category</h1></td><td><select name="txcode">
+        <option selected disabled >--select--</option>
+        {% for j in taxrec %}
+        <option>{{ j.taxcode }}</option>
+        {% endfor %}
+    </select></td></tr>
+     <tr><td colspan="2"><center><input type="submit" value="CONFIRM"></center></td></tr>
+    </table>
+         <p><a href="/viewtax"> View Tax Rates </a> </p>
+   </center>
+</form>
+{% endblock content %}

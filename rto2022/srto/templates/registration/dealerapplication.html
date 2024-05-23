@@ -1,0 +1,12 @@
+{% extends 'Employeebase.html' %}
+
+
+{% block content %}
+<p>Welcome Employee Page</p>
+<table border="2">
+  <tr><td>Dealer Code</td><td>Dealer Name</td><td>Mobile No</td><td>Rt Office</td><td>Appoint</td></tr>
+  {% for city in objectlist %}
+      <tr><td>{{ city.dcode }}</td><td>{{ city.dname }}</td><td>{{ city.phone }}</td><td>{{city.rcode}}</td><td><a href="{% url 'dealerappoint' dcode=city.dcode%}">Appoint</a> </td></tr>
+  {% endfor %}
+</table>
+ {% endblock content %}

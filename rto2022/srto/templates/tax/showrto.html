@@ -1,0 +1,41 @@
+{% extends "adminbase.html" %}
+
+  {% block title %}Displaying Model Data{% endblock title %}
+
+  {% block content %}
+   <center>
+     <h1> VIEW REGISTRATION /TAX RATES PAGE</h1>
+     <body>
+        <table border="3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Tax Code</th>
+                    <th>Vehicle Type</th>
+                    <th>Mode of Operation</th>
+                    <th>Tax Percentage</th>
+                    <th>Duration in Years</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rts in rtos %}
+                    <tr>
+                        <td>{{ rts.taxcode }}</td>
+                        <td>{{ rts.vhtype }}</td>
+                        <td>{{ rts.mop}}</td>
+                        <td>{{rts.taxp }}</td>
+                        <td>{{rts.duration}}</td>
+                        <td>
+                            <a href="/edittax/{{ rts.taxcode }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+                            <a href="/deletetax/{{ rts.taxcode }}">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <center><a href="/addtax/" class="btn btn-primary">Add New Record</a></center>
+    </body>
+  </center>
+{% endblock content %}

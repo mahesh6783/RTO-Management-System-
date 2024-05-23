@@ -1,0 +1,29 @@
+{% extends "commonbase.html" %}
+
+{% block title %}Welcome Page{% endblock title %}
+
+{% block content %}
+  <h1>Online Dealer Registration Form</h1>
+
+  {% if submitted %}
+    <p class="success">
+      Registration submitted successfully. Thank you.
+   </p>
+ {% else %}
+   <form action="" method="post" novalidate>
+   <table>
+     {{ form.as_table }}
+     <tr>
+       <td>Enter User name :</td><td>&nbsp;<input type ='text' name ='u' ></td>
+      </tr>
+     <tr>
+       <td>Enter password :</td><td>&nbsp;<input type ='password' name ='p' ></td>
+     </tr>
+       <tr>
+           <td><input type="submit" value="Submit" ></td>
+       </tr>
+   </table>
+   {% csrf_token %}
+   </form>
+ {% endif %}
+{% endblock content %}

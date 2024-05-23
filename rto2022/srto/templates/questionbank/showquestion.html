@@ -1,0 +1,45 @@
+{% extends "adminbase.html" %}
+
+  {% block title %}Displaying Model Data{% endblock title %}
+
+  {% block content %}
+   <center>
+     <h1> VIEW QUESTION PAPER PAGE</h1>
+     <body>
+        <table border="3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Question No</th>
+                    <th>Question</th>
+                    <th>Option 1</th>
+                    <th>Option 2</th>
+                    <th>Option 3</th>
+                    <th>Option 4</th>
+                    <th>Answer Option</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rts in rtos %}
+                    <tr>
+                        <td>{{ rts.qno }}</td>
+                        <td>{{ rts.qname }}</td>
+                        <td>{{ rts.op1 }}</td>
+                        <td>{{ rts.op2 }}</td>
+                        <td>{{ rts.op3 }}</td>
+                        <td>{{ rts.op4 }}</td>
+                        <td>{{ rts.ans }}</td>
+                        <td>
+                            <a href="/editquest/{{ rts.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+                            <a href="/deletequest/{{ rts.id }}">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <center><a href="/addquest/" class="btn btn-primary">Add New Record</a></center>
+    </body>
+  </center>
+{% endblock content %}

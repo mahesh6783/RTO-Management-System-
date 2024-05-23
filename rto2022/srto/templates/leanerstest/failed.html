@@ -1,0 +1,14 @@
+{% extends "userbase.html" %}
+{% block content %}
+    <p class="success">
+        <center>
+            <h1>TEST FAILED </h1>
+            <table border="2">
+                <tr><td>Application No</td><td>{{appno}}</td></tr>
+                <tr><td>Name of the Applicant</td><td>{{aname}}</td></tr>
+                <tr><td>RT Office</td><td>{{rto}}</td></tr>
+                <tr><td colspan="2">{{result}}</td></tr>
+            </table>
+        </center>
+    </p>
+{% endblock content %}

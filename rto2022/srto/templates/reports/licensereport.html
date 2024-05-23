@@ -1,0 +1,15 @@
+{% extends "commonbase.html" %}
+
+  {% block title %}Displaying Model Data{% endblock title %}
+
+  {% block content %}
+   <center>
+    <h1>DIFFERENT LICENSE RATES</h1>
+    <table border="2">
+        <tr><td>LICENSE CODE</td><td>LICENSE NAME</td><td>LICENSE FEE</td><td>VALIDITY IN YEARS</td></tr>
+        {% for item in rtos %}
+            <tr><td>{{ item.lcode }}</td><td>{{item.lname}}</td><td>{{item.lfee}}</td><td>{{item.validity}}</td></tr>
+        {% endfor %}
+    </table>
+   </center>
+ {% endblock content %}

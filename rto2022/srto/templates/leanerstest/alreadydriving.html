@@ -1,0 +1,16 @@
+{% extends "userbase.html" %}
+{% block content %}
+    <p class="success">
+         <center>
+            <h1>ALREADY ISSUED</h1>
+            <table border="2">
+                <tr><td>Name of the Applicant</td><td>{{aname}}</td></tr>
+                <tr><td>RT Office</td><td>{{rto}}</td></tr>
+                <tr><td> Licence No </td><td>{{dlno}}</td></tr>
+                <tr><td> Licence Name </td><td>{{lname}}</td></tr>
+                <tr><td>Validity From</td><td>{{vfrom}}</td></tr>
+                <tr><td>Validity To</td><td>{{vto}}</td></tr>
+            </table>
+        </center>
+    </p>
+{% endblock content %}

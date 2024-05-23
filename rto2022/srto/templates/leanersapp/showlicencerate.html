@@ -1,0 +1,35 @@
+{% extends "commonbase.html" %}
+  {% block title %}Displaying Model Data{% endblock title %}
+  {% block content %}
+        <center>
+            <h1> PICK LICENSE SCHEME</h1>
+            <body>
+                <table border="3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>License Code</th>
+                            <th>License Name</th>
+                            <th>License Fee</th>
+                            <th>Validity</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for rts in rtos %}
+                            <tr>
+                                <td>{{ rts.lcode }}</td>
+                                <td>{{ rts.lname }}</td>
+                                <td>{{ rts.lfee}}</td>
+                                <td>{{rts.validity }}</td>
+                                <td>
+                                     <a href="/applyleaners/{{ rts.lcode }}"><span class="glyphicon glyphicon-pencil" >Apply Now</span></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <br>
+                <br>
+            </body>
+        </center>
+{% endblock content %}
